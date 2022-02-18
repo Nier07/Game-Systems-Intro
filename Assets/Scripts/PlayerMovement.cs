@@ -1,49 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//This script can be found in the Component section under RPG Game/Character/Movement
-[AddComponentMenu("RPG Game/Character/Movement")]
-//This script requires the component Character cotroller to be attacted to the Game Object
+
+[AddComponentMenu("RPG/Player/Movement")]
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Character")]
-    [Tooltip("use this to apply movement in worldspace")]
-    public Vector3 moveDirection; //Used to apply movement in worldspace
-    public CharacterController charC; //A reference to varable in character controller
-    [Header("Speeds")] // header creates a header fot the variable directly underneath
-    public float moveSpeed = 5f;
-    public float jumpSpeed = 8f, gravity = 20f;
-    // Start is called before the first frame update
-    void Start()
+    [Header("Speed Vars")]
+    public float moveSpeed;
+    public float walkSpeed, runSpeed, crouchSpeed, jumpSpeed;
+    private float _gravity = 20.0f;
+    private CharacterController _charC;
+    private Vector3 _moveDir;
+    private void Start()
     {
-        //asign component to our reference
-        charC = GetComponent<CharacterController>(); 
+        _charC = GetComponent<CharacterController>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (charC.isGrounded)
+        Move();
+    }
+    private void Move()
+    {
+        if (_charC.isGrounded)
         {
-            //set MoveDirection to the input direction
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            //allows us to move the player were the player is facing
-            moveDirection = transform.TransformDirection(moveDirection);
-            //moveDirection is multiplied by speed
-            moveDirection *= moveSpeed;
-            //if the input for jump is pressed then
-            if (Input.GetButton("Jump"))
+
+            if (Input.GetButton("Sprint"))
             {
-                //the moveDirection.y = jump speed
-                moveDirection.y = jumpSpeed;
+                moveSpeed = runSpeed;
+            }
+            else if (Input.GetButton("Crouch"))
+            {
+                moveSpeed = crouchSpeed;
+            }
+            else
+            {
+                moveSpeed = walkSpeed;
             }
 
+            _moveDir = transform.TransformDirection(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * moveSpeed);
+            if (Input.GetButton("Jump"))
+            {
+                _moveDir.y = jumpSpeed;
+            }
         }
-
-        //since gravity is positive we subtract to go down gravity is always effecting the object (moveDirection)
-        moveDirection.y -= gravity;
-        //tell the character controller to move in a direction
-        charC.Move(moveDirection * Time.deltaTime);
+        _moveDir.y -= _gravity * Time.deltaTime;
+        _charC.Move(_moveDir * Time.deltaTime);
     }
 }

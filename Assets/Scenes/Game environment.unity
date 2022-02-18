@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 1376794720}
   - component: {fileID: 1376794719}
   - component: {fileID: 1376794724}
+  - component: {fileID: 1376794725}
   - component: {fileID: 1376794723}
   m_Layer: 0
   m_Name: Player
@@ -231,14 +232,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1376794718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33646b7cd599cec449c6b2ca1609fbf2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d896db1923c51c4ea039eb224e21511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: {x: 0, y: 0, z: 0}
-  charC: {fileID: 0}
-  moveSpeed: 5
-  jumpSpeed: 8
-  gravity: 20
+  axis: 0
+  sensitivity: 500
+  minY: -60
+  maxY: 60
 --- !u!143 &1376794724
 CharacterController:
   m_ObjectHideFlags: 0
@@ -257,6 +257,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1376794725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376794718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33646b7cd599cec449c6b2ca1609fbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  walkSpeed: 5
+  runSpeed: 100
+  crouchSpeed: 2.5
+  jumpSpeed: 1000
 --- !u!1 &1566699151
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,8 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d896db1923c51c4ea039eb224e21511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 1
-  sensitivity: 7
+  axis: 0
+  sensitivity: 500
   minY: -60
   maxY: 60
-  invert: 1

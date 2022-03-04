@@ -47,16 +47,7 @@ public class Interact : MonoBehaviour
     }
     private void OnGUI()
     {
-        //Interates through all x and y
-        for (int x = 0; x < 16; x++)
-        {
-            for (int y = 0; y < 9; y++)
-            {
-                GUI.Box(new Rect(GameManager.scr.x * x, GameManager.scr.y * y,
-                    GameManager.scr.x, GameManager.scr.y), x+":"+y);
-            }
-        }
-        GUI.Box(new Rect(GameManager.scr.x * (8f - 0.125f), GameManager.scr.y * (4.5f - 0.125f), 
-            GameManager.scr.x * .25f, GameManager.scr.y * .25f), "");
+        GUI.Box(new Rect(GameManager.scr.x * (8f - 0.125f), GameManager.scr.y * (4.5f - 0.125f),
+       GameManager.scr.x * .25f, GameManager.scr.y * .25f), "");
     }
 }

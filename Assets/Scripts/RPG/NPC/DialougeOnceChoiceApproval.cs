@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialougeOnceChoiceApproval : MonoBehaviour
+public class DialougeOnceChoiceApproval : DialougeOneChoice
 {
-    [Header("Display dialouge")]
-    public string[] text;
-    [Header("Index Markers")]
-    public int choice;
-    public int index;
     [Header("Aprroval Score")]
     public int approval;
-    [Header("Toggle for dialouge visability")]
-    public bool showDlg;
     [Header("The approval based responses")]
     public string[] likeText;
     public string[] neutralText;
@@ -46,14 +39,14 @@ public class DialougeOnceChoiceApproval : MonoBehaviour
                 if (GUI.Button(new Rect(GameManager.scr.x * 14, GameManager.scr.y * 8.5f, GameManager.scr.x, GameManager.scr.y * 0.5f), "Yes"))
                 {
                     index++;
-                    chnageApproval(true);
+                    changeApproval(true);
                 }
 
                 //button for no | lower approval | Chnage to disliketext
                 if (GUI.Button(new Rect(GameManager.scr.x * 15, GameManager.scr.y * 8.5f, GameManager.scr.x, GameManager.scr.y * 0.5f), "No"))
                 {
                     index = text.Length - 1;
-                    chnageApproval(false);
+                    changeApproval(false);
                 }
             }
             else
@@ -62,13 +55,15 @@ public class DialougeOnceChoiceApproval : MonoBehaviour
                 if (GUI.Button(new Rect(GameManager.scr.x * 15, GameManager.scr.y * 8.5f, GameManager.scr.x, GameManager.scr.y * 0.5f), "Bye"))
                 {
                     index = 0;
+                    showDlg = false;
+                    GameManager.gamePlayStates = GamePlayStates.Game;
                 }
             }
         }
     }
-    public void chnageApproval(bool approveUpDown)
+    public void changeApproval(bool approvalChange)
     {
-        if (approveUpDown)
+        if (approvalChange)
         {
             approval++;
         }
@@ -79,17 +74,17 @@ public class DialougeOnceChoiceApproval : MonoBehaviour
         
         approval = Mathf.Clamp(approval, -1, 1);
 
-        if (approval == 1)
+        switch (approval)
         {
-            text = likeText;
-        }
-        else if (approval == 0)
-        {
-            text = neutralText;
-        }
-        else
-        {
-            text = dislikeText;
+            case -1:
+                text = dislikeText;
+                break;
+            case 0:
+                text = neutralText;
+                break;
+            case 1:
+                text = likeText;
+                break;
         }
     }
 }

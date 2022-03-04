@@ -24,6 +24,11 @@ public class Interact : MonoBehaviour
                 if (hitInfo.collider.CompareTag("NPC"))
                 {
                     Debug.Log("NPC");
+                    if (hitInfo.collider.GetComponent<Dialogue>())
+                    {
+                        hitInfo.collider.GetComponent<Dialogue>().showDlg = true;
+                        GameManager.gamePlayStates = GamePlayStates.MenuPause;
+                    }
                 }
                 #endregion
 

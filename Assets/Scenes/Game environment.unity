@@ -216,7 +216,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &897023704
 GameObject:
@@ -260,7 +260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &897023707
 MonoBehaviour:
@@ -367,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376794718
 GameObject:
@@ -477,13 +477,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376794718}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d896db1923c51c4ea039eb224e21511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   axis: 0
-  sensitivity: 500
+  sensitivity: 250
   minY: -60
   maxY: 60
 --- !u!143 &1376794724
@@ -533,6 +533,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ecc07633b7ebd479117b128c1cdb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1555467894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555467895}
+  m_Layer: 0
+  m_Name: NPC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1555467895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555467894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.04, y: 2, z: 4.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1979199371}
+  - {fileID: 1882440950}
+  - {fileID: 1557573172}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557573167
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,9 +579,11 @@ GameObject:
   - component: {fileID: 1557573170}
   - component: {fileID: 1557573169}
   - component: {fileID: 1557573168}
+  - component: {fileID: 1557573174}
+  - component: {fileID: 1557573173}
   m_Layer: 0
   m_Name: Stacy
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,10 +601,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: []
-  choice: 2
   index: 0
+  showDlg: 0
+  choice: 2
   approval: 0
-  showDlg: 1
   likeText:
   - Hey, good to see you again
   - Like
@@ -621,7 +656,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2bfe08245a1ff584cb485222ea15a000, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -658,13 +693,100 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557573167}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.63, y: 1, z: 12.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.5900002, y: -1, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1555467895}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1557573173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557573167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c29b8b328a4cd4bb0570a059d70317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes:
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  baseStats:
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+--- !u!114 &1557573174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557573167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2440ddf99f55c14ebe6dd3f92bc81e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes:
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
 --- !u!1 &1566699151
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,13 +1047,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874314561}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d896db1923c51c4ea039eb224e21511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   axis: 0
-  sensitivity: 500
+  sensitivity: 250
   minY: -60
   maxY: 60
 --- !u!1 &1882440945
@@ -947,9 +1069,11 @@ GameObject:
   - component: {fileID: 1882440948}
   - component: {fileID: 1882440947}
   - component: {fileID: 1882440946}
+  - component: {fileID: 1882440952}
+  - component: {fileID: 1882440951}
   m_Layer: 0
   m_Name: Dave
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -961,7 +1085,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882440945}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f694291f2c506c44b3612cbde6ea69f, type: 3}
   m_Name: 
@@ -972,9 +1096,9 @@ MonoBehaviour:
   - Choice
   - You have doomed me
   - goodbye
-  choiceIndex: 2
   index: 0
-  showDlg: 1
+  showDlg: 0
+  choice: 2
 --- !u!136 &1882440947
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1008,7 +1132,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0fd2bdfb2273214da2e8290fb79401e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1045,13 +1169,100 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882440945}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.36, y: 1, z: 12.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.27999973, y: -1, z: 9.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1555467895}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882440951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882440945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c29b8b328a4cd4bb0570a059d70317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes:
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  baseStats:
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+--- !u!114 &1882440952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882440945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2440ddf99f55c14ebe6dd3f92bc81e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes:
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
 --- !u!1 &1979199367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1276,8 @@ GameObject:
   - component: {fileID: 1979199369}
   - component: {fileID: 1979199368}
   - component: {fileID: 1979199372}
+  - component: {fileID: 1979199374}
+  - component: {fileID: 1979199373}
   m_Layer: 0
   m_Name: Kevin
   m_TagString: NPC
@@ -1105,7 +1318,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a2b36daf89679614db638c1480f187e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1142,12 +1355,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979199367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.21, y: 1, z: 13.080001}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.02, y: -1, z: 6.8099995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1555467895}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1979199372
 MonoBehaviour:
@@ -1156,7 +1369,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979199367}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6b8540b34489ab49a8d5b3d5dac43bf, type: 3}
   m_Name: 
@@ -1168,4 +1381,91 @@ MonoBehaviour:
   - 'You do that seven days a week,  '
   - you're going to have something special.
   index: 0
-  showDlg: 1
+  showDlg: 0
+--- !u!114 &1979199373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979199367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c29b8b328a4cd4bb0570a059d70317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes:
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  baseStats:
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+  - name: 
+    value: 0
+    modifier: 0
+    tempValue: 0
+--- !u!114 &1979199374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979199367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2440ddf99f55c14ebe6dd3f92bc81e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes:
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}
+  - name: 
+    curValue: 0
+    maxValue: 0
+    tempValue: 0
+    regenValue: 0
+    display: {fileID: 0}

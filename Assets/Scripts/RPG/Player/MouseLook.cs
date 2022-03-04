@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    #region Variables
     public enum RotationalAxis
     {
         MouseX,
@@ -18,6 +19,7 @@ public class MouseLook : MonoBehaviour
     public float sensitivity = 100;
     public float minY = -60, maxY = 60;
     private float _rotY;
+    #endregion
 
     void Start()
     {
@@ -34,15 +36,22 @@ public class MouseLook : MonoBehaviour
     }
     void Update()
     {
-        if (axis == RotationalAxis.MouseX)
+        if (GameManager.gamePlayStates == GamePlayStates.Game)
         {
-            transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime, 0);
-        }
-        else
-        {
-            _rotY += Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-            _rotY = Mathf.Clamp(_rotY, minY, maxY);
-            transform.localEulerAngles = new Vector3(-_rotY, 0, 0);
+            #region Mouse X
+            if (axis == RotationalAxis.MouseX)
+            {
+                transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime, 0);
+            }
+            #endregion
+            #region Mouse Y
+            else
+            {
+                _rotY += Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+                _rotY = Mathf.Clamp(_rotY, minY, maxY);
+                transform.localEulerAngles = new Vector3(-_rotY, 0, 0);
+            }
+            #endregion
         }
     }
 }

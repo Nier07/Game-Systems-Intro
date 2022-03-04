@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
+    [Header("Dialogue Text")]
     public string[] text;
+    [Header("Current Index of Dialogue")]
     public int index;
+    [Header("Show Dialogue Toggle")]
     public bool showDlg;
     private void OnGUI()
     {
@@ -31,6 +34,7 @@ public class Dialogue : MonoBehaviour
                 {
                     index = 0;
                     showDlg = false;
+                    GameManager.gamePlayStates = GamePlayStates.Game;
                 }
 
             }

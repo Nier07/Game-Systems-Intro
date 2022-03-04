@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialougeOneChoice : MonoBehaviour
+public class DialougeOneChoice : Dialogue
 {
-    public string[] text;
-    public int choiceIndex;
-    public int index;
-    public bool showDlg;
+    [Header("Choice Index")]
+    public int choice;
 
     void OnGUI()
     {
@@ -15,7 +13,7 @@ public class DialougeOneChoice : MonoBehaviour
         {
             //box
             GUI.Box(new Rect(GameManager.scr.x * 0, GameManager.scr.y * 6, GameManager.scr.x * 16, GameManager.scr.y * 5), text[index]);
-            if (index < text.Length - 1 && index != choiceIndex)
+            if (index < text.Length - 1 && index != choice)
             {
                 if (GUI.Button(new Rect(GameManager.scr.x * 15, GameManager.scr.y * 8.5f, GameManager.scr.x, GameManager.scr.y * 0.5f), "Next")) //not choice
                 {
@@ -24,7 +22,7 @@ public class DialougeOneChoice : MonoBehaviour
                 }
             }
 
-            else if (choiceIndex == index) // choice
+            else if (choice == index) // choice
             {
                 //button yes / ++
                 if (GUI.Button(new Rect(GameManager.scr.x * 14, GameManager.scr.y * 8.5f, GameManager.scr.x, GameManager.scr.y * 0.5f), "Yes"))
@@ -43,6 +41,7 @@ public class DialougeOneChoice : MonoBehaviour
                 {
                     index = 0;
                     showDlg = false;
+                    GameManager.gamePlayStates = GamePlayStates.Game;
                 }
             }
             

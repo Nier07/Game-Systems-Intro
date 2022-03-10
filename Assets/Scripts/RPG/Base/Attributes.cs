@@ -6,14 +6,14 @@ using System;
 
 public class Attributes : MonoBehaviour
 {
-    [Serializable]
+    [System.Serializable]
     public struct Attribute
     {
         public string name;
-        public int curValue;
-        public int maxValue;
-        public int tempValue;
-        public int regenValue;
+        public float curValue;
+        public float maxValue;
+        public float tempValue;
+        public float regenValue;
         public Image display;
     }
     public Attribute[] attributes = new Attribute[3];

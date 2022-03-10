@@ -6,7 +6,7 @@ using System;
 public class Stats : Attributes
 {
     //serilizae helps break data down into bite sized pieces in order to be processed/changed
-    [Serializable]
+    [System.Serializable]
     public struct BaseStat
     {
         public string name;

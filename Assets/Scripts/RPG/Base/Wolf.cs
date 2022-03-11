@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wolf : EnemyMovement
 {
     public Material[] wolfSkin = new Material[4];
-    public Renderer renderer;
+    public new Renderer renderer;
 
     public override void Start()
     {

@@ -136,12 +136,12 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109793221}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 3
   avoidancePriority: 50
-  m_AngularSpeed: 300
+  m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -259,7 +259,7 @@ MonoBehaviour:
   distanceToPoint: 0
   changeCloseWaypoint: 1
   StopFromPlayer: 3
-  turnSpeed: 5
+  turnSpeed: 10
   anim: {fileID: 0}
   wolfSkin:
   - {fileID: 2100000, guid: 880f7e5694243e240862bd82e9ca136e, type: 2}
@@ -1156,14 +1156,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376794718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.04, y: 1, z: 4.38}
+  m_LocalRotation: {x: -0, y: -0.88969964, z: -0, w: 0.4565465}
+  m_LocalPosition: {x: 60.4, y: 2.4, z: 45.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1874314564}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -125.671, z: 0}
 --- !u!114 &1376794723
 MonoBehaviour:
   m_ObjectHideFlags: 0
